@@ -63,7 +63,7 @@
           <i class="fa fa-plus"></i>Add Clients</button>
         <button mat-raised-button *mifosxHasPermission="'ASSOCIATECLIENTS_GROUP'" (click)="doAction('Transfer Clients')">
           <i class="fa fa-exchange"></i>Transfer Clients</button>
-        <button mat-raised-button *mifosxHasPermission="'TRANSFERCLIENTS_GROUP'" (click)="doAction('Manage Members')">
+        <button class="disabled" mat-raised-button *mifosxHasPermission="'TRANSFERCLIENTS_GROUP'" (click)="doAction('Manage Members')" [disabled]="!groupViewData.active"  [ngClass]="{'disabled' : !groupViewData.active }">
           <i class="fa fa-user"></i>Manage Members</button>
 
         <button mat-raised-button *ngIf="groupViewData.active" [matMenuTriggerFor]="AccountApplications">
